@@ -129,22 +129,7 @@ Te lo juro te quiero muchísimo , y pase lo que pase, para lo bueno y para lo ma
   
 <footer>Rober😊Andrea</footer>
 
-  <script>
-    const fileInput = document.getElementById('fileInput');
-    const preview = document.getElementById('preview');
-
-    fileInput.addEventListener('change', (event) => {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          preview.src = e.target.result;
-          preview.style.display = 'block';
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-  </script>
+  
 
 </body>
 </html>
