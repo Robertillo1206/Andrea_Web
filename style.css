@@ -1,0 +1,171 @@
+/* --- ESTILO BASE (Para ambas páginas) --- */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4a4a4a;
+    position: relative;
+}
+
+/* --- FORMATO ORIGINAL (Página Index) --- */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+}
+
+.photo-frame img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ff80ab;
+    margin-bottom: 1rem;
+}
+
+/* --- NUEVA FOTO A LA IZQUIERDA CON EFECTO --- */
+.photo-left-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+}
+
+.img-efecto {
+    width: 100%;
+    border: 10px solid white; /* Efecto Polaroid */
+    border-bottom: 30px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    transform: rotate(-5deg); /* Inclinación */
+    transition: all 0.5s ease;
+    animation: floatPhoto 4s infinite ease-in-out;
+}
+
+.img-efecto:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+@keyframes floatPhoto {
+    0%, 100% { transform: rotate(-5deg) translateY(0); }
+    50% { transform: rotate(-5deg) translateY(-15px); }
+}
+
+/* --- FORMATO DE LA PÁGINA DE MENSAJES --- */
+.wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; 
+    justify-content: center;
+    /* CAMBIO AQUÍ: center en lugar de flex-start para alinear la foto con el centro de los cuadros */
+    align-items: center; 
+    padding: 80px 20px 40px 20px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.letter-card {
+    background: #fffef0; 
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+    position: relative;
+    border: 1px solid #e0e0e0;
+}
+
+.letter-body {
+    background-image: linear-gradient(#e1e1e1 1px, transparent 1px);
+    background-size: 100% 1.8rem;
+    line-height: 1.8rem;
+    padding-top: 0.5rem;
+    font-family: 'Verdana', serif;
+    font-style: italic;
+    color: #333;
+}
+
+n {
+    font-weight: bold;
+    color: #d81b60;
+    font-style: normal;
+}
+
+/* --- TEXTOS Y BOTONES --- */
+h1, h2 { color: #d81b60; margin-top: 0; }
+
+.btn-principal {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #ff80ab;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.btn-volver {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 15px;
+    background-color: rgba(255, 128, 171, 0.2);
+    border: 1px solid #ff80ab;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: #d81b60;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.btn-volver:hover {
+    background-color: #ff80ab;
+    color: white;
+}
+
+.letter-header {
+    border-bottom: 2px solid #ff80ab;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #d81b60;
+}
+
+.texto-amor { text-align: left; line-height: 1.6; }
+hr { border: 0; border-top: 1px solid #fce4ec; margin: 15px 0; }
+
+.hearts {
+    margin-top: 1.5rem;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Móvil */
+@media (max-width: 800px) {
+    .wrapper { flex-direction: column; align-items: center; }
+    .letter-card, .photo-left-container { max-width: 90%; }
+    .img-efecto { transform: rotate(0deg); animation: none; }
+}
